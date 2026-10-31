@@ -54,6 +54,13 @@ Each student has a character sheet, XP, levels/ranks and badges, and the class h
 - Each poll grants a base amount to every voter; bets are capped by a per-poll maximum.
 - Edge cases: no losers → everyone keeps their bet; no winners → pot is lost.
 
+## Visibility (decided 2026-10-31)
+
+- Character sheets are private (student + teacher only).
+- Class leaderboard shows only the **top N** (teacher sets N; teacher can turn it off).
+- On the leaderboard a student appears under a **generic username** by default
+  (e.g. "Aventurier 12"); they opt in on their sheet to show their real name.
+
 ## Later (not v1)
 
 - In-app shop spending the currency.
@@ -63,6 +70,5 @@ Each student has a character sheet, XP, levels/ranks and badges, and the class h
 ## Open questions
 
 - Match imported grades by student name or by student number?
-- Can students see each other's sheets, or a leaderboard?
 - UI language: French, English, or both?
 - Login: class code + pseudonym vs Microsoft 365 / Google.
