@@ -31,9 +31,28 @@ Each student has a character sheet, XP, levels/ranks and badges, and the class h
   and enforce access with Supabase Row Level Security on every table.
 - XP stays separate from the official grade (it's formative).
 
+## XP, quests and badges (decided 2026-10-31)
+
+- XP comes from **approved quest completions** and **badges**.
+- Quests are approved by the teacher, made efficient by **grade import**: the teacher uploads a
+  CSV (student, grade) for a quest; every student with a grade gets the completion approved,
+  students without a grade don't. Completions store the grade.
+- Badges = achievements, awarded **automatically by rule** or **by hand**. Built-in rule types
+  (teacher picks one + parameters to make a custom badge), e.g. grade ≥ X on a quest, N quests
+  of a category, bonus question earned, polls won. Rules re-run after each grade import.
+- Bonus questions on assignments are a main badge source.
+
+## Polls (proposal, Twitch-style predictions)
+
+- Teacher launches a T/F or A/B/C/D question; students vote and bet; when it closes the answer is
+  revealed and winners split the losers' pot in proportion to their bets.
+- Each poll grants a base amount to every voter; bets are capped by a per-poll maximum.
+- Edge cases: no losers → everyone keeps their bet; no winners → pot is lost.
+
 ## Open questions
 
-- Who gives out XP: the teacher by hand, automatic rules (polls, attendance), or both?
+- Is the poll currency XP itself, or a separate currency (gold) so levels never go down?
+- Match imported grades by student name or by student number?
 - Can students see each other's sheets, or a leaderboard?
 - UI language: French, English, or both?
 - Login: class code + pseudonym vs Microsoft 365 / Google.
