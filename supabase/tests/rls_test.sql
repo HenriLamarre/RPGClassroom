@@ -1,6 +1,6 @@
 -- Checks the security rules and poll math. Run with scripts/test-db.sh.
 \set ON_ERROR_STOP 1
-insert into auth.users values
+insert into auth.users (id, email) values
  ('00000000-0000-0000-0000-00000000000a','prof@cegep.qc.ca'),
  ('00000000-0000-0000-0000-00000000000b','ana@cegep.qc.ca'),
  ('00000000-0000-0000-0000-00000000000c','ben@cegep.qc.ca'),

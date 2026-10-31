@@ -318,3 +318,12 @@ create policy "self or teacher reads" on poll_votes for select using (
 
 -- Live poll updates for the classroom screen.
 alter publication supabase_realtime add table polls, poll_votes;
+
+-- ---------- Function permissions ----------
+-- Postgres lets everyone run new functions. Signed-out visitors may only run the two helpers
+-- the security rules use (they return false for them); the trigger function is for the trigger only.
+revoke execute on function add_owner_as_teacher() from public, anon, authenticated;
+revoke execute on function join_semester(text), cast_vote(uuid, int, int), resolve_poll(uuid, int),
+  leaderboard(uuid), my_stats(uuid) from public, anon;
+grant execute on function join_semester(text), cast_vote(uuid, int, int), resolve_poll(uuid, int),
+  leaderboard(uuid), my_stats(uuid) to authenticated;
