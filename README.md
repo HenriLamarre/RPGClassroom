@@ -43,4 +43,4 @@ Test the database rules (needs a local Postgres): `PSQL="psql -U postgres" scrip
 
 ## License
 
-To be decided.
+[MIT](LICENSE)
