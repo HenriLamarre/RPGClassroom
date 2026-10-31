@@ -68,6 +68,14 @@ Each student has a character sheet, XP, levels/ranks and badges, and the class h
 - **Language:** French or English, chosen by the teacher in the wizard (default French);
   each student can override it in their settings. All UI strings go through i18n from day one.
 
+## Login (decided 2026-10-31)
+
+- Supabase **email magic link**, no passwords. Teacher shows a **QR code** in class that opens
+  the join page; the student enters their email and gets the link.
+- Wizard option: **roster only** (teacher imports a list of emails; only those can join) or
+  **open** (anyone with the QR/link can join; optionally restricted to an email domain).
+- Grade CSVs match students by email (or student number if the roster has it).
+
 ## Later (not v1)
 
 - In-app shop spending the currency.
@@ -76,5 +84,4 @@ Each student has a character sheet, XP, levels/ranks and badges, and the class h
 
 ## Open questions
 
-- Match imported grades by student name or by student number?
-- Login: class code + pseudonym vs Microsoft 365 / Google.
+- (none yet)
