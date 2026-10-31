@@ -36,7 +36,9 @@ Each student has a character sheet, XP, levels/ranks and badges, and the class h
 - XP comes from **approved quest completions** and **badges**.
 - Quests are approved by the teacher, made efficient by **grade import**: the teacher uploads a
   CSV (student, grade) for a quest; every student with a grade gets the completion approved,
-  students without a grade don't. Completions store the grade.
+  students without a grade don't. **Grades are never stored or shown**: they're used during the
+  import to award completions and badges, then discarded (students see grades in Omnivox).
+  A badge added later is applied by re-uploading the CSV.
 - Badges = achievements, awarded **automatically by rule** or **by hand**. Built-in rule types
   (teacher picks one + parameters to make a custom badge), e.g. grade ≥ X on a quest, N quests
   of a category, bonus question earned, polls won. Rules re-run after each grade import.
@@ -46,12 +48,20 @@ Each student has a character sheet, XP, levels/ranks and badges, and the class h
 
 - Teacher launches a T/F or A/B/C/D question; students vote and bet; when it closes the answer is
   revealed and winners split the losers' pot in proportion to their bets.
+- Bets use a **separate class currency**, never XP, so XP and levels only go up. The teacher
+  sets the currency's name and icon per semester (avoid gambling words like "gold").
+  Call them "predictions" in the UI, not "bets".
 - Each poll grants a base amount to every voter; bets are capped by a per-poll maximum.
 - Edge cases: no losers → everyone keeps their bet; no winners → pot is lost.
 
+## Later (not v1)
+
+- In-app shop spending the currency.
+- Teacher can switch features (e.g. the shop) off during class: start with a manual toggle,
+  maybe a class schedule later.
+
 ## Open questions
 
-- Is the poll currency XP itself, or a separate currency (gold) so levels never go down?
 - Match imported grades by student name or by student number?
 - Can students see each other's sheets, or a leaderboard?
 - UI language: French, English, or both?
